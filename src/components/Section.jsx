@@ -5,7 +5,7 @@ import ShowcaseSection from './sections/ShowcaseSection';
 import ProcessSection from './sections/ProcessSection';
 import DefaultSection from './sections/DefaultSection';
 
-const Section = ({ data }) => {
+const Section = ({ data, selectedPackage, setSelectedPackage }) => {
   const sectionOrder = data.section_order || [];
   const layoutSettings = data.layout_settings || {};
 
@@ -45,8 +45,17 @@ const Section = ({ data }) => {
         }
 
         // 2. Product/Shop Sections
-        if (sectionName.includes('product') || sectionName.includes('shop')) {
-          return <ProductSection key={idx} sectionName={sectionName} items={items} sectionStyle={sectionStyle} />;
+        if (sectionName.includes('product') || sectionName.includes('shop') || sectionName === 'diensten') {
+          return (
+            <ProductSection 
+              key={idx} 
+              sectionName={sectionName} 
+              items={items} 
+              sectionStyle={sectionStyle} 
+              setSelectedPackage={setSelectedPackage}
+              selectedPackage={selectedPackage}
+            />
+          );
         }
 
         // 3. Showcase/Portfolio Sections
@@ -68,6 +77,7 @@ const Section = ({ data }) => {
             sectionStyle={sectionStyle} 
             currentLayout={currentLayout} 
             iconMap={iconMap} 
+            selectedPackage={selectedPackage}
           />
         );
       })}

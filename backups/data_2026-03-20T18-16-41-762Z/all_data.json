@@ -21,32 +21,6 @@
       "linkedin_url": "contact-laptop-gent.png"
     }
   ],
-  "diensten": [
-    {
-      "titel": "Starter",
-      "beschrijving": "Snel online met een professionele one-page website. Ideaal voor startende zelfstandigen en freelancers.",
-      "prijs": 750,
-      "kenmerken": "Responsive design (mobiel + desktop), Tot 5 secties (hero/diensten/contact/...), Google Sheets CMS — zelf content beheren, Gratis hosting (geen maandelijkse kosten), Basis SEO-setup, Handleiding in het Nederlands, Levertijd: 24-48 uur",
-      "recommended": false,
-      "order": 1
-    },
-    {
-      "titel": "Professional",
-      "beschrijving": "Compleet & professioneel. De populairste keuze voor gevestigde KMO's, kappers, restaurants en aannemers.",
-      "prijs": 1495,
-      "kenmerken": "Alles uit Starter, Tot 10 secties met team/reviews/prijslijst/FAQ, Visuele editor — klik en wijzig zelf, Professionele stockfoto's, Contactformulier + WhatsApp button, Google Maps integratie, Social media koppeling, 2 revisierondes, Levertijd: 2-3 werkdagen",
-      "recommended": true,
-      "order": 2
-    },
-    {
-      "titel": "Business",
-      "beschrijving": "Alles wat je nodig hebt. Voor winkels, webshops en bedrijven die online willen verkopen.",
-      "prijs": 2495,
-      "kenmerken": "Alles uit Professional, Onbeperkte secties, Productcatalogus met prijzen, Betalingen via Mollie (Bancontact/iDEAL/creditcard), Meertalig (NL/FR/EN), Google Analytics + cookie banner (GDPR), Custom domein setup, 30 dagen gratis support, 3 revisierondes, Levertijd: 3-5 werkdagen",
-      "recommended": false,
-      "order": 3
-    }
-  ],
   "display_config": {
     "site_name": "athena-hub",
     "sections": {
@@ -66,7 +40,7 @@
   "footer": [
     {
       "footer_text": "© 2026 Athena CMS Factory - Kracht door Eenvoud.",
-      "email": "athena.cms.factory@gmail.be",
+      "email": "info@athena-cms.be",
       "telefoon": "+32 (0) 470 00 00 00",
       "adres": "Gent, België",
       "facebook_url": "#",
@@ -90,11 +64,14 @@
   ],
   "hero": [
     {
-      "title": "",
+      "title": " ",
       "subtitle": "",
       "cta_text": "Bekijk de Demo's",
       "image": "hero-athenahub-1-1770366162431.webp",
-      "cta": "Bekijk de Demo's",
+      "cta": {
+        "label": "Bekijk de Demo's",
+        "url": "#showcase"
+      },
       "hero_overlay_transparantie": 0.02,
       "hero_hoogte": 503
     }
@@ -115,18 +92,8 @@
     "proces": "z-pattern"
   },
   "links_config": {
-    "showcase:0:link": "https://athena-cms-factory.github.io/urban-brew-bite",
-    "showcase:1:link": "https://athena-cms-factory.github.io/urban-soles",
-    "showcase:2:link": "https://athena-cms-factory.github.io/chocolade-shop",
-    "showcase:3:link": "https://athena-cms-factory.github.io/academy-1",
-    "showcase:4:link": "https://athena-cms-factory.github.io/de-schaar-site",
-    "showcase:5:link": "https://athena-cms-factory.github.io/kdc-it-advies",
-    "showcase:6:link": "https://athena-cms-factory.github.io/pure-bloom-floral",
-    "showcase:7:link": "https://athena-cms-factory.github.io/athena-pro",
-    "showcase:8:link": "https://athena-cms-factory.github.io/bakkerij-de-graankorrel",
-    "showcase:9:link": "https://athena-cms-factory.github.io/cloud-architects",
-    "showcase:10:link": "https://athena-cms-factory.github.io/gentse-dakwerken",
-    "showcase:11:link": "https://athena-cms-factory.github.io/lex-justitia"
+    "showcase:1:link": "https://athena-cms-factory.github.io/demo-bakkerij",
+    "showcase:0:link": "https://athena-cms-factory.github.io/de-schaar-site"
   },
   "proces": [
     {
@@ -228,17 +195,6 @@
           "tijdsduur",
           "uitleg"
         ]
-      },
-      {
-        "table_name": "diensten",
-        "columns": [
-          "titel",
-          "beschrijving",
-          "prijs",
-          "kenmerken",
-          "recommended",
-          "order"
-        ]
       }
     ],
     "sections": [
@@ -325,20 +281,6 @@
           "linkedin": "string",
           "location": "string"
         }
-      },
-      {
-        "id": "diensten",
-        "title": "Onze Pakketten",
-        "fields": {
-          "items": [
-            {
-              "titel": "string",
-              "beschrijving": "text",
-              "prijs": "number",
-              "kenmerken": "text"
-            }
-          ]
-        }
       }
     ]
   },
@@ -349,99 +291,130 @@
     "showcase",
     "innovatie",
     "proces",
-    "diensten",
     "contact"
   ],
   "section_settings": {
-    "site_name": "athena-hub",
-    "diensten": {
-      "title": "Diensten",
-      "subtitle": "Heldere pakketten voor een eerlijke prijs."
-    }
+    "site_name": "athena-hub"
   },
   "showcase": [
     {
       "name": "Urban Brew & Bite",
       "category": "Horeca",
       "description": "Specialty coffee en urban lunch experience in het hart van Gent.",
-      "link": "https://athena-cms-factory.github.io/urban-brew-bite",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/urban-brew-bite/"
+      },
       "image": "showcase-urban-brew-bite.webp"
     },
     {
       "name": "Urban Soles",
       "category": "Webshop",
       "description": "High-end sneaker shop met 20+ producten en AI-gegenereerde content.",
-      "link": "https://athena-cms-factory.github.io/urban-soles",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/urban-soles/"
+      },
       "image": "1-1770476441932-1770476982985.jpg"
     },
     {
       "name": "Belgian Chocolate Shop",
       "category": "Webshop",
       "description": "Een webshop voor Belgische chocolaterie",
-      "link": "https://athena-cms-factory.github.io/chocolade-shop",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/chocolade-shop/"
+      },
       "image": "hero-1770476346310.jpeg"
     },
     {
       "name": "Academy-1",
       "category": "Educatie",
       "description": "Een modern leerplatform voor cursussen en trainingen.",
-      "link": "https://athena-cms-factory.github.io/academy-1",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/academy-1/"
+      },
       "image": "b9367654-49e1-48f6-a95b-0c4e9f4308c6.jpg"
     },
     {
       "name": "De Schaar",
       "category": "Beauty & Wellness",
       "description": "Een moderne website voor kapsalons met focus op sfeer en team-presentatie.",
-      "link": "https://athena-cms-factory.github.io/de-schaar-site",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/de-schaar-site"
+      },
       "image": "technische.png"
     },
     {
       "name": "KDC IT Advies",
       "category": "IT & Consultancy",
       "description": "Strategisch IT-advies en digitale transformatie voor KMO's.",
-      "link": "https://athena-cms-factory.github.io/kdc-it-advies",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/kdc-it-advies/"
+      },
       "image": "showcase-kdc-it-advies.webp"
     },
     {
       "name": "Pure Bloom Floral",
       "category": "Retail / Lifestyle",
       "description": "Exclusieve bloemencreaties en event-styling.",
-      "link": "https://athena-cms-factory.github.io/pure-bloom-floral",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/pure-bloom-floral/"
+      },
       "image": "showcase-pure-bloom-floral.webp"
     },
     {
       "name": "Athena Pro",
       "category": "B2B / SaaS",
       "description": "Een professionele showcase voor geavanceerde B2B diensten en SaaS oplossingen.",
-      "link": "https://athena-cms-factory.github.io/athena-pro",
+      "link": {
+        "label": "BEKIJK DEMO",
+        "url": "https://athena-cms-factory.github.io/athena-pro/"
+      },
       "image": "showcase-athena-pro.jpg"
     },
     {
       "name": "Bakkerij de Graankorrel",
       "category": "Detailhandel & Food",
       "description": "Lokale ambachtelijke bakkerij met een uitgebreid assortiment.",
-      "link": "https://athena-cms-factory.github.io/bakkerij-de-graankorrel",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/bakkerij-de-graankorrel/"
+      },
       "image": "artisanal-1-1770398212360.jpeg"
     },
     {
       "name": "Cloud Architects",
       "category": "IT / Tech",
       "description": "Strakke, moderne website voor IT-consultants en cloud architectuur specialisten.",
-      "link": "https://athena-cms-factory.github.io/cloud-architects",
+      "link": {
+        "label": "BEKIJK DEMO",
+        "url": "https://athena-cms-factory.github.io/cloud-architects/"
+      },
       "image": "showcase-cloud-architects.jpg"
     },
     {
       "name": "Gentse Dakwerken",
       "category": "Bouw & Renovatie",
       "description": "Specialist in dakrenovatie en zonnepanelen in de regio Gent.",
-      "link": "https://athena-cms-factory.github.io/gentse-dakwerken",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/gentse-dakwerken/"
+      },
       "image": "showcase-gentse-dakwerken.webp"
     },
     {
       "name": "Lex & Justitia Advocaten",
       "category": "Juridische Dienstverlening",
       "description": "Juridische expertise in ondernemingsrecht en vastgoedrecht.",
-      "link": "https://athena-cms-factory.github.io/lex-justitia",
+      "link": {
+        "label": "BEKIJK PROJECT",
+        "url": "https://athena-cms-factory.github.io/lex-justitia/"
+      },
       "image": "showcase-lex-justitia.webp"
     }
   ],
@@ -457,100 +430,73 @@
       "light_hero_bg_color": "#e7fdfc"
     }
   ],
-  "style_bindings": [
-    {
-      "Key": "site_name",
-      "Value": "athena-hub"
+  "style_bindings": {
+    "site_name": "athena-hub",
+    "hero:0:image": {
+      "bold": false,
+      "italic": false,
+      "fontSize": "16px",
+      "textAlign": "left",
+      "fontFamily": "sans-serif",
+      "textShadow": false
     },
-    {
-      "Key": "hero:0:image",
-      "Value": {
-        "bold": false,
-        "italic": false,
-        "fontSize": "16px",
-        "textAlign": "left",
-        "fontFamily": "sans-serif",
-        "textShadow": false
-      }
+    "hero:0:title": {
+      "bold": false,
+      "italic": false,
+      "fontSize": "16px",
+      "textAlign": "left",
+      "fontFamily": "sans-serif",
+      "textShadow": false
     },
-    {
-      "Key": "hero:0:title",
-      "Value": {
-        "bold": false,
-        "italic": false,
-        "fontSize": "16px",
-        "textAlign": "left",
-        "fontFamily": "sans-serif",
-        "textShadow": false
-      }
+    "intro:0:title": {
+      "bold": false,
+      "italic": false,
+      "fontSize": "16px",
+      "textAlign": "left",
+      "fontFamily": "sans-serif",
+      "textShadow": false
     },
-    {
-      "Key": "intro:0:title",
-      "Value": {
-        "bold": false,
-        "italic": false,
-        "fontSize": "16px",
-        "textAlign": "left",
-        "fontFamily": "sans-serif",
-        "textShadow": false
-      }
+    "hero:0:subtitle": {
+      "bold": false,
+      "italic": false,
+      "fontSize": "16px",
+      "textAlign": "left",
+      "fontFamily": "sans-serif",
+      "textShadow": false
     },
-    {
-      "Key": "hero:0:subtitle",
-      "Value": {
-        "bold": false,
-        "italic": false,
-        "fontSize": "16px",
-        "textAlign": "left",
-        "fontFamily": "sans-serif",
-        "textShadow": false
-      }
+    "site_settings:0:site_name": {
+      "bold": false,
+      "italic": false,
+      "fontSize": "16px",
+      "textAlign": "left",
+      "fontFamily": "sans-serif",
+      "textShadow": false
     },
-    {
-      "Key": "site_settings:0:site_name",
-      "Value": {
-        "bold": false,
-        "italic": false,
-        "fontSize": "16px",
-        "textAlign": "left",
-        "fontFamily": "sans-serif",
-        "textShadow": false
-      }
+    "showcase:1:link": {
+      "bold": false,
+      "italic": false,
+      "fontSize": "16px",
+      "textAlign": "left",
+      "fontFamily": "sans-serif",
+      "textShadow": false
     },
-    {
-      "Key": "showcase:1:link",
-      "Value": {
-        "bold": false,
-        "italic": false,
-        "fontSize": "16px",
-        "textAlign": "left",
-        "fontFamily": "sans-serif",
-        "textShadow": false
-      }
+    "showcase:0:link": {
+      "bold": false,
+      "italic": false,
+      "fontSize": "16px",
+      "textAlign": "left",
+      "fontFamily": "sans-serif",
+      "textShadow": false
     },
-    {
-      "Key": "showcase:0:link",
-      "Value": {
-        "bold": false,
-        "italic": false,
-        "fontSize": "16px",
-        "textAlign": "left",
-        "fontFamily": "sans-serif",
-        "textShadow": false
-      }
-    },
-    {
-      "Key": "contact:0:email",
-      "Value": {
-        "bold": false,
-        "italic": false,
-        "fontSize": "16px",
-        "textAlign": "left",
-        "fontFamily": "sans-serif",
-        "textShadow": false
-      }
+    "contact:0:email": {
+      "bold": false,
+      "italic": false,
+      "fontSize": "16px",
+      "textAlign": "left",
+      "fontFamily": "sans-serif",
+      "textShadow": false
     }
-  ],
+  },
   "style_config": [
     {
       "light_header_color": "#ffffff",

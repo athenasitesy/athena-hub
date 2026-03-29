@@ -78,17 +78,6 @@
         "tijdsduur",
         "uitleg"
       ]
-    },
-    {
-      "table_name": "diensten",
-      "columns": [
-        "titel",
-        "beschrijving",
-        "prijs",
-        "kenmerken",
-        "recommended",
-        "order"
-      ]
     }
   ],
   "sections": [
@@ -174,20 +163,6 @@
         "email": "string",
         "linkedin": "string",
         "location": "string"
-      }
-    },
-    {
-      "id": "diensten",
-      "title": "Onze Pakketten",
-      "fields": {
-        "items": [
-          {
-            "titel": "string",
-            "beschrijving": "text",
-            "prijs": "number",
-            "kenmerken": "text"
-          }
-        ]
       }
     }
   ]

@@ -18,10 +18,18 @@ function Header({ siteSettings = {}, headerData = {}, data }) {
 
   const handleScroll = (e) => {
     if (e.shiftKey) return;
-    const target = document.getElementById("contact");
+    // Aim for 'diensten' section as primary conversion path
+    const target = document.getElementById("diensten");
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback to contact
+      const contactTarget = document.getElementById("contact");
+      if (contactTarget) {
+        e.preventDefault();
+        contactTarget.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -73,7 +81,7 @@ function Header({ siteSettings = {}, headerData = {}, data }) {
             {header.header_show_button !== false && (
               <button 
                 onClick={handleScroll} 
-                className="bg-primary text-white px-6 py-1 rounded-full font-bold hover:bg-accent transition-all"
+                className="bg-primary text-white px-8 py-2.5 rounded-full font-bold hover:bg-accent hover:scale-105 transition-all shadow-lg active:scale-95"
                 data-dock-type="link" 
                 data-dock-bind="header.0.cta_label"
               >

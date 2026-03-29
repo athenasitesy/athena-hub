@@ -68,18 +68,15 @@ const ShowcaseSection = ({ sectionName, items, sectionStyle, data: allData }) =>
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-primary mb-6 capitalize leading-tight">
+        <div className="flex flex-col items-center text-center mb-16">
+          <div className="max-w-3xl">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-6 capitalize leading-tight">
               {sectionName.replace(/_/g, ' ')}
             </h2>
-            <div className="h-1.5 w-32 bg-accent rounded-full mb-8"></div>
+            <div className="h-1.5 w-32 bg-accent rounded-full mb-8 mx-auto"></div>
             <p className="text-xl text-slate-600 font-light">
               Digital Architecture That Scales. Een selectie van onze meest recente projecten.
             </p>
-          </div>
-          <div className="hidden md:block">
-             <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">Scroll to explore</span>
           </div>
         </div>
 

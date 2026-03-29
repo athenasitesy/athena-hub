@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import { DisplayConfigProvider } from './components/DisplayConfigContext';
 
 const App = ({ data: initialData }) => {
+  const [selectedPackage, setSelectedPackage] = useState(null);
   const [data, setData] = useState(() => {
     const saved = sessionStorage.getItem('athena_live_overrides');
     if (saved) {
@@ -59,7 +60,11 @@ const App = ({ data: initialData }) => {
           <StyleInjector siteSettings={data['site_settings']} />
           <Header siteSettings={data['site_settings']} headerData={data['header']} data={data} />
           <main style={{ paddingTop: 'var(--content-top-offset, 0px)' }}>
-            <Section data={data} />
+            <Section 
+              data={data} 
+              selectedPackage={selectedPackage} 
+              setSelectedPackage={setSelectedPackage} 
+            />
           </main>
           <Footer siteSettings={data['site_settings']} footerData={data['footer']} data={data} />
         </div>

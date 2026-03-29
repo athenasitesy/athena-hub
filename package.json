@@ -2,9 +2,10 @@
   "name": "athena-hub",
   "type": "module",
   "scripts": {
+    "sync-data": "node scripts/sync-data.cjs",
     "fetch-data": "node fetch-data.js",
-    "dev": "vite",
-    "build": "vite build"
+    "dev": "node scripts/sync-data.cjs --watch & vite",
+    "build": "npm run sync-data && vite build"
   },
   "dependencies": {
     "react": "^19.0.0",

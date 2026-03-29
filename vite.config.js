@@ -4,10 +4,43 @@ import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import fs from 'fs';
 
+const aggregateData = () => {
+  const dataDir = path.resolve(__dirname, 'src/data');
+  const allData = {};
+  const dataFiles = fs.readdirSync(dataDir).filter(f => 
+    f.endsWith('.json') && 
+    f !== 'all_data.json' && 
+    f !== 'all_data_showcase.json'
+  );
+  
+  for (const f of dataFiles) {
+    try {
+      allData[f.replace('.json', '')] = JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf8'));
+    } catch (e) {
+      console.warn(`⚠️ [Athena Data] Failed to parse ${f}:`, e.message);
+    }
+  }
+  
+  fs.writeFileSync(path.join(dataDir, 'all_data.json'), JSON.stringify(allData, null, 2));
+  console.log('🔄 [Athena Data] all_data.json updated.');
+};
+
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    {
+      name: 'athena-data-watcher',
+      configureServer(server) {
+        server.watcher.on('all', (event, file) => {
+          if (file.includes('src/data') && file.endsWith('.json') && !file.includes('all_data.json')) {
+            aggregateData();
+          }
+        });
+        // Run once on start
+        aggregateData();
+      }
+    },
     {
       name: 'athena-api-middleware',
       configureServer(server) {
@@ -73,13 +106,8 @@ export default defineConfig({
                   fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
                 }
 
-                // 🔱 v8.1 Auto-Aggregation (Refactored to inline for portability if script missing)
-                const allData = {};
-                const dataFiles = fs.readdirSync(dataDir).filter(f => f.endsWith('.json') && f !== 'all_data.json' && f !== 'all_data_showcase.json');
-                for (const f of dataFiles) {
-                  allData[f.replace('.json', '')] = JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf8'));
-                }
-                fs.writeFileSync(path.join(dataDir, 'all_data.json'), JSON.stringify(allData, null, 2));
+                // 🔱 v8.1 Auto-Aggregation
+                aggregateData();
                 
                 res.setHeader('Access-Control-Allow-Origin', '*');
                 res.setHeader('Content-Type', 'application/json');
@@ -101,7 +129,7 @@ export default defineConfig({
   server: {
     cors: true,
     port: parseInt(process.env.PORT) || 6041,
-      allowedHosts: true,
+    allowedHosts: true,
     host: true,
     fs: { allow: ['..'] }
   }

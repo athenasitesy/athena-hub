@@ -15,7 +15,7 @@ const Footer = ({ siteSettings = {}, footerData = {}, data }) => {
           
           {/* Brand Column */}
           <div className="space-y-8">
-            <h2 className="text-3xl font-black tracking-tighter" data-dock-type="text" data-dock-bind="site_settings.0.site_name">
+            <h2 className="text-3xl font-black tracking-tighter text-white" data-dock-type="text" data-dock-bind="site_settings.0.site_name">
               {siteName}
             </h2>
             <p className="text-slate-400 leading-relaxed font-light" data-dock-type="text" data-dock-bind="footer.0.tagline">
